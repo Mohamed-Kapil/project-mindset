@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kanban</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="jquery-3.7.1.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('#b1').click(function(){
+                $('body').css({
+                                  'color':'black',
+                                  'background':'white'
+                });
+            })
+        });
+        $(document).ready(function(){
+            $('#b2').click(function(){
+                $('body').css({
+                                  'color':'white',
+                                  'background':'black'
+                });
+            })
+        });
+    </script>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <nav class="col-md-4 col-lg-3 d-md-block bg-light sidebar">
+                <div class="sidebar-sticky">
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <img src="./img/favicon.png" alt="404Logo" class="img-fluid">
+                            <h3 class="mt-2">Kanban</h3>
+                        </li>
+                        <li class="nav-item">
+                            <span >ALL BOARDS (8)</span>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <img src="./img/icon-board.svg" alt="404img" class="img-fluid">
+                                <span>Platform Launch</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <img src="./img/icon-board.svg" alt="404img" class="img-fluid">
+                                <span>Marketing Plan</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <img src="./img/icon-board.svg" alt="404img" class="img-fluid">
+                                <span>Roadmap</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link create">
+                                <img src="./img/icon-board.svg" alt="404img" class="img-fluid">
+                                <span>+ Create New Board</span>
+                            </a>
+                        </li>
+
+                        <li class="colorTheme">
+                        <button id="b1" title="Light theme"><img src="./img/icon-light-theme.svg" alt="404img" class="img-fluid"></button>
+                        <button id="b2" title="Dark theme"><img src="./img/icon-dark-theme.svg" alt="404img" class="img-fluid"></button>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <img src="img\icon-hide-sidebar.svg" alt="404icon-hide-sidebar" class="img-fluid">
+                                <span>Hide Sidebar</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            <main class="col-md-8 ms-sm-auto col-lg-9 px-4">
+                <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                    <h5 class="hadding">Platform Launch</h5>
+                    <button class="button" onclick="myFunction()">+ Add New Task</button>
+                </div>
+                <div class="board">
+                    <div class="column" id="todo">
+                        <h3>TODO (4)</h3>
+                        <div class="task">Build UI for onboarding flow</div>
+                        <div class="task">Build UI for search</div>
+                        <div class="task">Build settings UI</div>
+                        <div class="task">QA and test all major user journeys</div>
+                    </div>
+                    <div class="column">
+                        <h3>DOING (6)</h3>
+                        <div class="task">Design settings and search pages</div>
+                        <div class="task">Add account management endpoints</div>
+                        <div class="task">Design onboarding flow</div>
+                        <div class="task">Add search endpoints</div>
+                        <div class="task">Add authentication endpoints</div>
+                        <div class="task">Research pricing points of various competitors</div>
+                    </div>
+                    <div class="column">
+                        <h3>DONE (7)</h3>
+                        <div class="task">Conduct 5 wireframe tests</div>
+                        <div class="task">Create wireframe prototype</div>
+                        <div class="task">Review results of usability tests and iterate</div>
+                        <div class="task">Create paper prototypes and conduct usability tests</div>
+                        <div class="task">Market discovery</div>
+                        <div class="task">Competitor analysis</div>
+                        <div class="task">Research the market</div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+
+
+    <!--add task-->
+    <div class="container" id="content">
+        <h2>Add New Task</h2>
+        <form>
+          <div class="form-group">
+            <label for="text" class="stlabel">Task Name</label>
+            <input type="text" class="form-control " id="text"  placeholder="e.g Task coffee break">
+          </div>
+          <div class="form-group">
+            <label for="text"  class="stlabel">Description</label>
+            <input type="text" class="form-control" id="text" style="height: 100px;" placeholder="e.g It's always good to take a break.">
+          </div>
+          <div class="form-group">
+          <label for="status" class="stlabel">Current Satuts</label>
+          <select id="status" name="status">
+            <option  class="stlabel">TODO</option>
+            <option  class="stlabel" >DOING</option>
+            <option  class="stlabel" >DONE</option>
+          </select>
+          <button class="button" style="width: 100%;" onclick="myF()">Create Task</button>
+          </div>
+        </form>
+    </div>
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>

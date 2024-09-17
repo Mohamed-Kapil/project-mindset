@@ -1,0 +1,186 @@
+/* إعادة تعيين بعض الأنماط الأساسية */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body {
+    background-color: rgb(207, 217, 255);
+    display: flex;
+    height: 100vh;
+}
+
+img, h3 {
+    display: inline;
+    padding-bottom: 15px;
+}
+.img-fluid,span{
+    display: inline;
+}
+/* تصميم القائمة الجانبية */
+.sidebar {
+    background-color: rgb(152, 195, 237);
+    width: 300px;
+    height: 100vh; /* تأكد من أن القائمة الجانبية تأخذ ارتفاع الشاشة بالكامل */
+    padding: 15px;
+    position: fixed; /* تثبيت القائمة الجانبية على الجانب */
+    top: 0; /* البداية من أعلى الصفحة */
+    left: 0; /* البداية من اليسار */
+    overflow-y: auto; /* إضافة تمرير عمودي إذا كان هناك الكثير من المحتوى */
+}
+
+.sidebar .nav-item {
+    margin-bottom: 10px;
+}
+
+.sidebar .nav-link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    border-radius: 7px;
+    color: black;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.sidebar .nav-link.active, .sidebar .nav-link:hover, .nav-item:hover {
+    background-color: blueviolet;
+    color: white;
+}
+
+.sidebar .nav-link.create {
+    color: blueviolet;
+}
+
+.sidebar .nav-link.create:hover {
+    color: #000;
+}
+
+.sidebar .nav-link img {
+    max-width: 20px;
+}
+
+.title-info {
+    background-color: blanchedalmond;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.button {
+    color: white;
+    background-color: blueviolet;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.dot,.dot1,.dot2{
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    display: inline-block;
+    background-color: rgb(135, 198, 253);
+}
+
+.dot1 {
+    background-color: blueviolet;
+}
+
+.dot2 {
+    background-color: rgb(136, 222, 127);
+}
+.button {
+    background-color:blueviolet;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 15px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.board {
+    flex: 1;
+    display: flex;
+    gap: 20px;
+}
+.column {
+    background-color:whitesmoke;
+    padding: 10px;
+    border-radius: 8px;
+    width: 300px;
+}
+.column h3 {
+    font-size: 18px;
+    margin: 0 0 10px;
+}
+.task {
+    background-color: white;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 5px 0;
+}
+
+.colorTheme{
+    justify-content: center;
+    padding-left: 100px;
+    padding-top: 80px;
+    padding-bottom: 30px;
+    /*background-color: rgb(207, 217, 255);*/
+}
+
+#b1{
+    font-size: 18px;
+    border-radius: 66px 0px 0px 66px;
+    border-color: rgb(207, 217, 255);
+    width: 40px;
+    outline: none;
+    background-color:  rgb(207, 217, 255);
+    transition: 1s;
+}
+
+#b2{
+    font-size: 19px;
+    border-radius: 0px 66px 66px 0px;
+    border-color: rgb(207, 217, 255);
+    width: 40px;
+    outline: none;
+    background-color:  rgb(207, 217, 255);
+    transition: 1s;
+}
+
+#b1:hover,#b2:hover{
+    background: blueviolet;
+
+}
+
+#content {
+    border: 1px solid #d1d1d1;
+    width:45%;
+    height: 80%;
+    align-items: center;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: #ffffff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.stlabel{
+    color: #565656;
+}
+input[type=text], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
